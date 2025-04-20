@@ -11,9 +11,14 @@ public class InsertAtBegining{
         }
     }
 
-//    public void insertAtBegining(Node node, int value){
-//
-//    }
+    public static Node  insertAtBegining(Node head, int data){
+
+        Node newNode= new Node(data);
+        newNode.next=head;
+
+        return newNode;
+
+    }
     public static void printList(Node head){
         Node temp=head;
 
@@ -25,30 +30,21 @@ public class InsertAtBegining{
         System.out.println("null");
     }
 
-    public static Node createLinkedList(Node head, int data){
-        Node temp=head;
-        temp.data= data;
-        temp.next=null;
 
-        return temp;
-
-
-    }
     public static void main(String[] args) {
 
-//        Node first=new Node(10);
-//        Node second= new Node(20);
-//        Node third= new Node(30);
-//
-//        first.next=second;
-//        second.next=third;
+        Node head=new Node(10);
+        Node second= new Node(20);
+        Node third= new Node(30);
 
-        Node head=null;
-        createLinkedList(head,10);
-        createLinkedList(head,20);
-        createLinkedList(head,30);
+        head.next=second;
+        second.next=third;
 
-        printList(first);
+        head=insertAtBegining(head,5);
+        head=insertAtBegining(head,15);
+        head=insertAtBegining(head,55);
+        head=insertAtBegining(head,500);
+        printList(head);
 
     }
 }
